@@ -1,14 +1,14 @@
 Package.describe({
   summary: "Configure security policies enforced by the browser",
   name: "qrl:browser-policy",
-  version: "1.1.1"
+  version: "1.2.0"
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.4.3.1');
+  api.versionsFrom('3.0');
   api.use('modules');
-  api.use(['browser-policy-content', 'browser-policy-framing'], 'server');
-  api.imply(['qrl:browser-policy-common@1.0.13'], 'server');
+  api.use(['browser-policy-content@2.0.0', 'browser-policy-framing@1.1.3'], 'server');
+  api.imply(['browser-policy-common@1.0.13'], 'server');
   api.mainModule('browser-policy.js', 'server');
 });
 
